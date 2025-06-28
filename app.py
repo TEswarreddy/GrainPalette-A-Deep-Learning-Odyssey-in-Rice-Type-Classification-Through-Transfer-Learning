@@ -37,9 +37,10 @@ def predict():
 
     # Clean up uploaded file
     os.remove(filepath)
-
+    print(f"Prediction: {label}")
     return jsonify({'prediction': label})
 
 if __name__ == '__main__':
     os.makedirs("uploads", exist_ok=True)
-    app.run(host="0.0.0.0", port=8000)
+    app.run(debug=True, port=8000)
+
